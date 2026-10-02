@@ -52,11 +52,11 @@ export function Navbar() {
                     Sign Out
                   </button>
                 </div>
-              ) : (
+              ) : pathname !== '/auth/login' ? (
                 <Link href="/auth/login" className="btn btn-primary btn-sm">
                   Sign In
                 </Link>
-              )}
+              ) : null}
             </>
           )}
 
