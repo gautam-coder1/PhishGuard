@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useAuth } from '@/components/auth/AuthProvider'
 import { useState } from 'react'
+import { AIChatbot } from '@/components/chat/AIChatbot'
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -37,6 +38,9 @@ export function Navbar() {
               </Link>
             </li>
           ))}
+          <li>
+            <AIChatbot />
+          </li>
         </ul>
 
         {/* Nav actions */}

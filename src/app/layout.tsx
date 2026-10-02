@@ -28,7 +28,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main style={{ paddingTop: 'var(--nav-height)' }}>
             {children}
           </main>
-          <AIChatbot />
         </AuthProvider>
       </body>
     </html>

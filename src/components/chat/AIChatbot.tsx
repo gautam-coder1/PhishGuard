@@ -52,7 +52,7 @@ export function AIChatbot() {
       if (data.message) {
         setMessages(prev => [...prev, { role: 'assistant', content: data.message }])
       } else {
-        setMessages(prev => [...prev, { role: 'assistant', content: 'Sorry, I encountered an error. Please try again later.' }])
+        setMessages(prev => [...prev, { role: 'assistant', content: `Sorry, I encountered an error: ${data.error || 'Please try again later.'}` }])
       }
     } catch (error) {
       setMessages(prev => [...prev, { role: 'assistant', content: 'Network error. Please try again.' }])
@@ -65,30 +65,20 @@ export function AIChatbot() {
     <>
       {/* Floating Chat Button */}
       <button
+        className="nav-link"
         onClick={() => setIsOpen(!isOpen)}
         style={{
-          position: 'fixed',
-          bottom: '24px',
-          right: '24px',
-          width: '60px',
-          height: '60px',
-          borderRadius: '30px',
-          background: 'var(--color-primary)',
-          color: 'white',
+          background: 'none',
           border: 'none',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '28px',
-          zIndex: 9999,
-          transition: 'transform 0.2s',
+          gap: 'var(--space-2)',
+          fontSize: 'var(--text-base)',
+          color: isOpen ? 'var(--color-primary)' : 'var(--color-text-secondary)'
         }}
-        onMouseOver={e => e.currentTarget.style.transform = 'scale(1.1)'}
-        onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
       >
-        {isOpen ? '✕' : '🤖'}
+        🤖 {isOpen ? 'Close Chat' : 'PhishBot AI'}
       </button>
 
       {/* Chat Window */}
