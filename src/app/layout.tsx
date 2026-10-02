@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { AuthProvider } from '@/components/auth/AuthProvider'
-import { AIChatbot } from '@/components/chat/AIChatbot'
 
 export const metadata: Metadata = {
   title: {
